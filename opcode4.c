@@ -5,9 +5,9 @@
  * @head: pointer to the stack head
  * @line_number: line number to monty file
  */
-void mul(stack **head, unsigned int line_number)
+void mul(stack_t **head, unsigned int line_number)
 {
-	stack *temp;
+	stack_t *temp;
 	int len = 0, aux;
 
 	temp = *head;
@@ -39,7 +39,7 @@ void mul(stack **head, unsigned int line_number)
  */
 void mod(stack_t **head, unsigned int line_number)
 {
-	stack *temp;
+	stack_t *temp;
 	int len = 0, aux;
 
 	temp = *head;
@@ -50,7 +50,8 @@ void mod(stack_t **head, unsigned int line_number)
 	}
 	if (len < 2)
 	{
-		fprintf(stderr, "L%d: can't mod, stack too short\n", counter);
+		fprintf(stderr, "L%d: can't mod, stack too short\n",
+				line_number);
 		fclose(bus.file);
 		free(bus.content);
 		free_stack(*head);
@@ -59,7 +60,8 @@ void mod(stack_t **head, unsigned int line_number)
 	temp = *head;
 	if (temp->n == 0)
 	{
-		fprintf(stderr, "L%d: division by zero\n", counter);
+		fprintf(stderr, "L%d: division by zero\n",
+				line_number);
 		fclose(bus.file);
 		free(bus.content);
 		free_stack(*head);
@@ -76,7 +78,7 @@ void mod(stack_t **head, unsigned int line_number)
  * @head: pointer to the stack head
  * @line_number: line number in monty
  */
-void pchar(stack **head, unsigned int line_number)
+void pchar(stack_t **head, unsigned int line_number)
 {
 	stack_t *temp;
 
@@ -107,9 +109,9 @@ void pchar(stack **head, unsigned int line_number)
  * @head: pointer to the stack head
  * @line_number: line number in monty file
  */
-void pstr(stack **head, unsigned int line_number)
+void pstr(stack_t **head, unsigned int line_number)
 {
-	stack_t **temp;
+	stack_t *temp;
 	(void)line_number;
 
 	temp = *head;

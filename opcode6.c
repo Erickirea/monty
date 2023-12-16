@@ -1,14 +1,14 @@
 #include "monty.h"
 
 /**
- * stack - sets the format of the data to stack
+ * f_stack - sets the format of the data to stack
  * @head: pointer to stack head
  * @line_number: file line in monty file
  */
-void stack(stack **head, unsigned int line_number)
+void f_stack(stack_t **head, unsigned int line_number)
 {
 	(void)head;
-	(void)counter;
+	(void)line_number;
 	bus.lifi = 0;
 }
 
@@ -20,7 +20,7 @@ void stack(stack **head, unsigned int line_number)
 void queue(stack_t **head, unsigned int line_number)
 {
 	(void)head;
-	(void)counter;
+	(void)line_number;
 	bus.lifi = 1;
 }
 

@@ -5,7 +5,7 @@
  * @head: pointer to the stack head
  * @line_number: line number in monty file
  */
-void rotl(stack **head, _attribute_((unused))
+void rotl(stack_t **head, __attribute__((unused))
 		unsigned int line_number)
 {
 	stack_t *tmp = *head, *aux;

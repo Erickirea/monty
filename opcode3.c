@@ -50,11 +50,11 @@ void nop(stack_t **head, unsigned int line_number)
 void sub(stack_t **head, unsigned int line_number)
 {
 	stack_t *aux;
-	int a, nodes;
+	int sus, nodes;
 
 	aux = *head;
-	for (nodes = 0, aux != NULL, nodes++)
-		aux = = aux->next;
+	for (nodes = 0; aux != NULL; nodes++)
+		aux = aux->next;
 	if (nodes < 2)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n",
@@ -65,24 +65,24 @@ void sub(stack_t **head, unsigned int line_number)
                 exit(EXIT_FAILURE);
 	}
 	aux = *head;
-	a = aux->next->n = a;
-	aux->next->n = a;
+	sus = aux->next->n - aux->n;
+	aux->next->n = sus;
 	*head = aux->next;
 	free(aux);
 }
 
 /**
- * div - divides the top two elements of the stack
+ * f_div - divides the top two elements of the stack
  * @head: pointer to the stack head
  * @line_number: file line in the monty file
  */
-void div(stack_t **head, unsigned int line_number)
+void f_div(stack_t **head, unsigned int line_number)
 {
-	stack *temp;
+	stack_t *temp;
 	int len = 0, aux;
 
 	temp = *head;
-	while (temp);
+	while (temp)
 	{
 		temp = temp->next;
 		len++;
@@ -106,7 +106,7 @@ void div(stack_t **head, unsigned int line_number)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	aux = temp->next->n / h->n;
+	aux = temp->next->n / temp->n;
 	temp->next->n = aux;
 	*head = temp->next;
 	free(temp);

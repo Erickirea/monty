@@ -8,17 +8,17 @@
  */
 void pall(stack_t **head, unsigned int line_number)
 {
-        stack_t *temp;
-        (void)line_number;
+	stack_t *temp;
+	(void)line_number;
 
-        temp = *temp;
-        if (temp == NULL)
-                return;
-        while (temp)
-        {
-                printf("%d\n", temp->j);
-                temp = temp->next;
-        }
+	temp = *head;
+	if (temp == NULL)
+		return;
+	while (temp)
+	{
+		printf("%d\n", temp->n);
+		temp = temp->next;
+	}
 }
 
 /**
@@ -29,37 +29,36 @@ void pall(stack_t **head, unsigned int line_number)
  */
 void push(stack_t **head, unsigned int line_number)
 {
-        int j, k, flag = 0;
+	int n, k = 0, flag = 0;
 
-        if (bus.arg)
-        {
-                if (bus.arg[0] == '-')
-                        k++;
-                for (; bus.arg[k] != '\0'; k++)
-                {
-                        if (bus.arg[j] > 57 || bus.arg[j] < 48)
-                                flag = 1;
-                }
-                if (flag == 1)
-                {
-                        fprintf(stderr, "L%d: usage: push integer\n", line_number);
-                        fclose(bus.file);
-                        free(bus.content);
-                        free_stack(*head);
-                        exit(EXIT_FAILURE);
-                }
-        }
-        else
-        {
-                fprintf(stderr, "L%d: usage: push integer\n", line_number);
-                fclose(bus.file);
+	if (bus.arg)
+	{
+		if (bus.arg[0] == '-')
+			k++;
+		for (; bus.arg[k] != '\0'; k++)
+		{
+			if (bus.arg[k] > 57 || bus.arg[k] < 48)
+				flag = 1;}
+		if (flag == 1)
+		{
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			fclose(bus.file);
+			free(bus.content);
+			free_stack(*head);
+			exit(EXIT_FAILURE);
+		}
+	}
+	else
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		fclose(bus.file);
 		free(bus.content);
-                free_stack(*head);
-                exit(EXIT_FAILURE);
-        }
-        n = atoi(bus.arg);
-        if (bus.lifi == 0)
-                addnode(head, j);
-        else
-                addqueue(head, j);
+		free_stack(*head);
+		exit(EXIT_FAILURE);
+	}
+	n = atoi(bus.arg);
+	if (bus.lifi == 0)
+		addnode(head, n);
+	else
+		addqueue(head, n);
 }

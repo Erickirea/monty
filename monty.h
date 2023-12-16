@@ -11,14 +11,14 @@
 
 /**
  * struct stack_s - doubly linked list representation of a stack
- * @j: integer
+ * @n: integer
  * @prev: previous element of the stack
  * @next: next element of the stack
  *
  */
 typedef struct stack_s
 {
-	int j;
+	int n;
 	struct stack_s *prev;
 	struct stack_s *next;
 } stack_t;
@@ -58,6 +58,26 @@ extern bus_t bus;
 void push(stack_t **head, unsigned int line_number);
 void pall(stack_t **head, unsigned int line_number);
 void pint(stack_t **head, unsigned int line_number);
-
+void pop(stack_t **head, unsigned int line_number);
+void add(stack_t **head, unsigned int line_number);
+void nop(stack_t **head, unsigned int line_number);
+void sub(stack_t **head, unsigned int line_number);
+void f_div(stack_t **head, unsigned int line_number);
+void mul(stack_t **head, unsigned int line_number);
+void mod(stack_t **head, unsigned int line_number);
+void pchar(stack_t **head, unsigned int line_number);
+void pstr(stack_t **head, unsigned int line_number);
+void rotl(stack_t **head, __attribute__((unused)) unsigned int line_number);
+void rotr(stack_t **head, __attribute__((unused)) unsigned int line_number);
+void f_stack(stack_t **head, unsigned int line_number);
+void queue(stack_t **head, unsigned int line_number);
+void addqueue(stack_t **head, int n);
+void free_stack(stack_t *head);
+void addnode(stack_t **head, int n);
+void swap(stack_t **head, unsigned int line_number);
+int execute(char *content, stack_t **head, unsigned int line_number, FILE *file);
+char *clean_line(char *content);
+ssize_t getstdin(char **lineptr, int file);
+char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 
 #endif /*MONTY_H*/
