@@ -38,7 +38,7 @@ void push(stack_t **head, unsigned int line_number)
 		for (; bus.arg[k] != '\0'; k++)
 		{
 			if (bus.arg[k] > 57 || bus.arg[k] < 48)
-				flag = 1;}
+				flag = 1; }
 		if (flag == 1)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);

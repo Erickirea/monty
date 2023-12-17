@@ -60,9 +60,9 @@ void sub(stack_t **head, unsigned int line_number)
 		fprintf(stderr, "L%d: can't sub, stack too short\n",
 				line_number);
 		fclose(bus.file);
-                free(bus.content);
-                free_stack(*head);
-                exit(EXIT_FAILURE);
+		free(bus.content);
+		free_stack(*head);
+		exit(EXIT_FAILURE);
 	}
 	aux = *head;
 	sus = aux->next->n - aux->n;
@@ -92,9 +92,9 @@ void f_div(stack_t **head, unsigned int line_number)
 		fprintf(stderr, "L%d: can't div, stack too short\n",
 				line_number);
 		fclose(bus.file);
-                free(bus.content);
-                free_stack(*head);
-                exit(EXIT_FAILURE);
+		free(bus.content);
+		free_stack(*head);
+		exit(EXIT_FAILURE);
 	}
 	temp = *head;
 	if (temp->n == 0)
@@ -102,7 +102,7 @@ void f_div(stack_t **head, unsigned int line_number)
 		fprintf(stderr, "L%d: division by zero\n",
 				line_number);
 		fclose(bus.file);
-                free(bus.content);
+		free(bus.content);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}

@@ -26,10 +26,10 @@ void pint(stack_t **head, unsigned int line_number)
 void pop(stack_t **head, unsigned int line_number)
 {
 	stack_t *temp;
-	
+
 	if (*head == NULL)
 	{
-		fprintf(stderr, "L%d: can't pop an empty stack\n",line_number);
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
 		fclose(bus.file);
 		free(bus.content);
 		free_stack(*head);
